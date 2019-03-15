@@ -70,7 +70,7 @@ class Anim{
             height:10,
             directionX: 3
           };
-        Anim.rightNotes = [rectRight];
+        Anim.rightNotes = [];
         Anim.notes = [rect2];
         Anim.song = song;
         Anim.frame = 0;
@@ -85,8 +85,8 @@ class Anim{
         for(var i=0;i<Anim.notes.length;i++){
             Anim.notes[i].y += Anim.speed;
           }
-        for(var i=0;i<Anim.rightNotes.length;i++){
-            Anim.rightNotes[i].y += Anim.speed;
+        for(var j=0;j<Anim.rightNotes.length;j++){
+            Anim.rightNotes[j].y += Anim.speed;
           }
           draw();
           requestAnimationFrame(animate);
@@ -97,6 +97,12 @@ class Anim{
                 Anim.context.strokeStyle = "white";
                 Anim.context.lineWidth = 10;
                 Anim.context.strokeRect(r.x,r.y,r.width,r.height);
+              }
+              for (var j=0;j<Anim.rightNotes.length;j++){
+                var r2=Anim.rightNotes[j];
+                Anim.context.strokeStyle = "red";
+                Anim.context.lineWidth = 10;
+                Anim.context.strokeRect(r2.x,r2.y,r2.width,r2.height);
               }
             
           }
@@ -127,8 +133,14 @@ class Anim{
     }
 
     static removeNote(type){
-        Anim.notes.shift();
-
+        if (type == "left"){
+            Anim.notes.shift();
+            console.log("left")
+        }
+        else{
+            Anim.rightNotes.shift();
+            console.log("right")
+        }
     }
 }
 
@@ -152,6 +164,8 @@ class Hud{
         document.getElementById("artist").innerText = this.song.artist;
         document.getElementById("title").innerText = this.song.name;
         document.getElementById("hudLeft").style.opacity = 1;
+        document.getElementById("combo").style.opacity = 1;
+        document.getElementById("score").style.opacity = 1;
     }
 }
 
@@ -163,22 +177,38 @@ class Combo{
 
     static addCombo(){
         Combo.combo += 1;
-        document.getElementById("combo").innerText = Combo.combo;
+        document.getElementById("combo").innerText = "Combo : " + Combo.combo;
     }
 
     static resetCombo(){
         Combo.maxCombo = Combo.combo;
         Combo.combo = 0;
-        document.getElementById("combo").innerText = Combo.combo;
+        document.getElementById("combo").innerText = "Combo : " + Combo.combo;
     }
 }
 
 class Score{
     constructor(){
-        this.score = 0;
+        Score.score = 0;
     }
     
     static addScore(amount){
-        this.score += amount;
+        Score.score += amount;
+        document.getElementById("score").innerText = "Score: " + Score.score;
+
+    }
+}
+
+class JudgeCounter{
+    constructor(){
+        JudgeCounter.pf = 0;
+        JudgeCounter.gd = 0;
+        JudgeCounter.ni = 0;
+        JudgeCounter.bd = 0;
+        JudgeCounter.mi = 0;
+    };
+
+    static countJudge(type){
+        JudgeCounter[type] += 1;
     }
 }

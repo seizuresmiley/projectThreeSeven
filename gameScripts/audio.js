@@ -37,10 +37,10 @@ class Audio{
     }
 
     static lowerVolume(){
-        Audio.gainNode.gain.value -= 0.1;
+        this.gainNode.gain.value -= 0.1;
     }
     static raiseVolume(){
-        Audio.gainNode.gain.value += 0.1;
+        this.gainNode.gain.value += 0.1;
     }
 }
 

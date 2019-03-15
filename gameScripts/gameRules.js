@@ -9,8 +9,8 @@ class GameRules{
 
         this.perfectScore = 4;
         this.goodScore = 2;
-        this.nice = 1;
-        this.bad = 0; 
+        this.niceScore = 1;
+        this.badScore = 0; 
 
     }
 }

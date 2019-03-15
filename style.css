@@ -72,3 +72,22 @@ canvas {
     z-index: 2;
 }
 
+#combo {
+    opacity : 0;
+    z-index:2;
+    position:absolute;
+    top : 300px;
+    left : 30px;
+    font-size : 2em;
+    transition : 1s opacity;
+}
+
+#score {
+    opacity : 0;
+    z-index:2;
+    position:absolute;
+    top : 350px;
+    left : 30px;
+    font-size : 2em;
+    transition : 1s opacity;
+}
