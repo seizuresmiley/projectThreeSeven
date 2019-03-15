@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title>t7s tribute game poc</title>
+    <script src="gameScripts/gameRules.js"></script>
+    <script src="gameScripts/gameManifests.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <script src="gameScripts/gameState.js"></script>
+    <script src="gameScripts/keyboard.js"></script>
+    <script src="gameScripts/index.js"></script>
+    <script src="gameScripts/canvas.js"></script>
+    <script src="gameScripts/assetManager.js"></script>
+    <script src="gameScripts/audio.js"></script>
+    <script src="gameScripts/prepLoader.js"></script>
+
+</head>
+<body onload = "onloadPrep()">
+    <h1>t7s tribute game poc</h1>
+    left time :<span id = "left"> 0 </span> <br>
+    right time:<span id = "right"> 0 </span> <br>
+    game start :<span id = "gameTime"> 0</span> <br>
+    current frame : <span id = "frame"> 0 </span><br>
+    combo : <span id = "combo"> 0 </span><br>
+    score : <span id = "score"> 0 </span><br>
+    <div class = "game">
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <div class = "judgeLine"></div>
+    <div id = "hudLeft">
+    <img id = "jacketDisplay"></img>
+    <div id = "title" class = "hudText"></div>
+    <div id = "artist" class = "hudText"></div>
+    <span id = "judgeText"></span>
+    </div>
+    </div>
+    <br>
+    <h1>available songs</h1>
+    <img src = "imgs/forgetting.png" class = "jacket" id = "forgetting" onclick = "set(this)" title = "Forgetting Machine">
+    <img src = "imgs/hannari.jpg" class = "jacket" id = "hannari" onclick = "set(this)" title = "HANNARI">
+
+    <div id = "selectableSongs">
+
+    </div>
+</body>
