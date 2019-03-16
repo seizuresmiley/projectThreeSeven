@@ -166,6 +166,7 @@ class Hud{
         document.getElementById("hudLeft").style.opacity = 1;
         document.getElementById("combo").style.opacity = 1;
         document.getElementById("score").style.opacity = 1;
+        document.getElementById("tip").style.opacity = 0;
     }
 }
 

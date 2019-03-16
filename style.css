@@ -4,10 +4,16 @@
 }
 h1 {
     font-family: Arial, Helvetica, sans-serif;
+    color : white;
+    text-align : center;
 }
 
 canvas {
     background-image : linear-gradient(maroon,purple);
+}
+
+body {
+    background-color : black
 }
 
 .judgeLine {
@@ -22,6 +28,8 @@ canvas {
 
 .game {
     position: relative;
+    margin : auto;
+    width : 1280px
 }
 
 #jacketDisplay{
@@ -90,4 +98,20 @@ canvas {
     left : 30px;
     font-size : 2em;
     transition : 1s opacity;
+}
+#selectableSongs {
+    width : 1280px;
+    margin : auto;
+}
+
+#tip {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size : 4em;
+    color : white;
+    transition : 1s opacity;
+    position: absolute;
+    left : 10px;
+    top : 520px;
+    text-align :center;
+    z-index : 2;
 }
