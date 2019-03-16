@@ -18,11 +18,13 @@ body {
 
 .judgeLine {
     width : 1280px;
-    height : 20px;
+    height : 10px;
     background-color : red;
     position : absolute;
     z-index: 2;
-    top : 639px
+    top : 639px;
+    opacity : 0;
+    transition : opacity 1s;
 
 }
 
@@ -114,4 +116,9 @@ body {
     top : 520px;
     text-align :center;
     z-index : 2;
+}
+
+.help {
+    text-align: center;
+    color : white;
 }
