@@ -5,7 +5,7 @@ class GameState{
         } if (this.state == "play"){
 
         }
-        console.log(GameState.state);
+        (GameState.state);
     }
 }
 
@@ -24,35 +24,35 @@ class GameTimer{
         let gameRule = new GameRules;
         new TimingCheck(song,gameRule);
 
-        console.log(GameTimer.loadedChart);
+        (GameTimer.loadedChart);
         requestAnimationFrame(frameTimer);
         function frameTimer(){
             GameTimer.frame += 1;
             if (GameTimer.loadedChart[0] < Math.abs((GameTimer.begin - 1794) - performance.now()) && GameTimer.firstNote){
-                console.log("first note hit " + performance.now())
+                ("first note hit " + performance.now())
                 cv.drawNote()
                 GameTimer.loadedChart.shift();
                 GameTimer.firstNote = false;
             }
             if (GameTimer.loadedChart[0] < Math.abs((GameTimer.begin - 1794) - performance.now())){
-                console.log("subsequent notes hit " + Math.abs(GameTimer.begin - performance.now()));
+                ("subsequent notes hit " + Math.abs(GameTimer.begin - performance.now()));
                 cv.addNote();
                 GameTimer.loadedChart.shift();
             }
             if ((TimingCheck.currentChart[0] + 163) < Math.abs(GameTimer.begin  - performance.now()) ){
                 Anim.removeNote("left");
-                console.log("timeout recv");
+                ("timeout recv");
                 TimingCheck.currentChart.shift();
                 Combo.resetCombo();
             }
             if (GameTimer.loadedRightChart[0] < Math.abs((GameTimer.begin - 1794) - performance.now())){
-                console.log("subsequent notes hit " + Math.abs(GameTimer.begin - performance.now()));
+                ("subsequent notes hit " + Math.abs(GameTimer.begin - performance.now()));
                 cv.addRightNote();
                 GameTimer.loadedRightChart.shift();
             }
             if ((TimingCheck.currentRightChart[0] + 163) < Math.abs(GameTimer.begin  - performance.now()) ){
                 Anim.removeNote("right");
-                console.log("timeout recv right");
+                ("timeout recv right");
                 TimingCheck.currentRightChart.shift();
                 Combo.resetCombo();
             }
@@ -88,7 +88,7 @@ class TimingCheck{
         if (Math.abs(timestamp - localChart[0]) < TimingCheck.rule.perfect){
             document.getElementById("judgeText").innerText = "Perfect!";
             document.getElementById("judgeText").style.opacity = 1;
-            console.log("pf " + (timestamp - localChart[0]));
+            ("pf " + (timestamp - localChart[0]));
             this.currentChart.shift();
             Combo.addCombo()
             Score.addScore(TimingCheck.rule.perfectScore)
@@ -96,7 +96,7 @@ class TimingCheck{
         }else if (Math.abs(timestamp - localChart[0]) < TimingCheck.rule.good){
             document.getElementById("judgeText").innerText = "Good";
             document.getElementById("judgeText").style.opacity = 1;
-            console.log("gd " + (timestamp - localChart[0]));
+            ("gd " + (timestamp - localChart[0]));
             this.currentChart.shift();
             Combo.addCombo();
             Score.addScore(TimingCheck.rule.goodScore)
@@ -104,7 +104,7 @@ class TimingCheck{
         }else if (Math.abs(timestamp - localChart[0]) < TimingCheck.rule.nice){
             document.getElementById("judgeText").innerText = "Nice";
             document.getElementById("judgeText").style.opacity = 1;
-            console.log("ni " + (timestamp - localChart[0]));
+            ("ni " + (timestamp - localChart[0]));
             this.currentChart.shift();
             Combo.addCombo();
             Score.addScore(TimingCheck.rule.niceScore)
@@ -113,16 +113,16 @@ class TimingCheck{
         }else if (Math.abs(timestamp - localChart[0]) < TimingCheck.rule.bad){
             document.getElementById("judgeText").innerText = "Bad";
             document.getElementById("judgeText").style.opacity = 1;
-            console.log("bd " + (timestamp - localChart[0]));
+            ("bd " + (timestamp - localChart[0]));
             this.currentChart.shift();
             Combo.resetCombo();
             Score.addScore(TimingCheck.rule.badScore)
             Anim.removeNote("left");
         
         }else {
-            console.log("nothing" + this.currentChart);
-            console.log(timestamp - localChart[0]);
-            console.log(timestamp);
+            ("nothing" + this.currentChart);
+            (timestamp - localChart[0]);
+            (timestamp);
             document.getElementById("judgeText").innerText = "";
             document.getElementById("judgeText").style.opacity = 0;
         }
@@ -134,7 +134,7 @@ class TimingCheck{
         if (Math.abs(timestamp - localChart[0]) < TimingCheck.rule.perfect){
             document.getElementById("judgeText").innerText = "Perfect!";
             document.getElementById("judgeText").style.opacity = 1;
-            console.log("pf " + (timestamp - localChart[0]));
+            ("pf " + (timestamp - localChart[0]));
             this.currentRightChart.shift();
             Combo.addCombo();
             Score.addScore(TimingCheck.rule.perfectScore)
@@ -142,7 +142,7 @@ class TimingCheck{
         }else if (Math.abs(timestamp - localChart[0]) < TimingCheck.rule.good){
             document.getElementById("judgeText").innerText = "Good";
             document.getElementById("judgeText").style.opacity = 1;
-            console.log("gd " + (timestamp - localChart[0]));
+            ("gd " + (timestamp - localChart[0]));
             this.currentRightChart.shift();
             Combo.addCombo();
             Score.addScore(TimingCheck.rule.goodScore)
@@ -150,7 +150,7 @@ class TimingCheck{
         }else if (Math.abs(timestamp - localChart[0]) < TimingCheck.rule.nice){
             document.getElementById("judgeText").innerText = "Nice";
             document.getElementById("judgeText").style.opacity = 1;
-            console.log("ni " + (timestamp - localChart[0]));
+            ("ni " + (timestamp - localChart[0]));
             this.currentRightChart.shift();
             Combo.addCombo();
             Score.addScore(TimingCheck.rule.niceScore)
@@ -159,16 +159,16 @@ class TimingCheck{
         }else if (Math.abs(timestamp - localChart[0]) < TimingCheck.rule.bad){
             document.getElementById("judgeText").innerText = "Bad";
             document.getElementById("judgeText").style.opacity = 1;
-            console.log("bd " + (timestamp - localChart[0]));
+            ("bd " + (timestamp - localChart[0]));
             this.currentRightChart.shift();
             Score.addScore(TimingCheck.rule.badScore)
             Combo.resetCombo();
             Anim.removeNote("right");
         
         }else {
-            console.log("nothing right" + this.currentRightChart);
-            console.log(timestamp - localChart[0]);
-            console.log(timestamp);
+            ("nothing right" + this.currentRightChart);
+            (timestamp - localChart[0]);
+            (timestamp);
             document.getElementById("judgeText").innerText = "";
             document.getElementById("judgeText").style.opacity = 0;
         }

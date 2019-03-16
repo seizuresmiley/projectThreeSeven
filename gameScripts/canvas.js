@@ -100,7 +100,7 @@ class Anim{
               }
               for (var j=0;j<Anim.rightNotes.length;j++){
                 var r2=Anim.rightNotes[j];
-                Anim.context.strokeStyle = "red";
+                Anim.context.strokeStyle = "white";
                 Anim.context.lineWidth = 10;
                 Anim.context.strokeRect(r2.x,r2.y,r2.width,r2.height);
               }
@@ -135,11 +135,11 @@ class Anim{
     static removeNote(type){
         if (type == "left"){
             Anim.notes.shift();
-            console.log("left")
+            ("left")
         }
         else{
             Anim.rightNotes.shift();
-            console.log("right")
+            ("right")
         }
     }
 }
@@ -167,6 +167,7 @@ class Hud{
         document.getElementById("combo").style.opacity = 1;
         document.getElementById("score").style.opacity = 1;
         document.getElementById("tip").style.opacity = 0;
+        document.getElementById("judgeline").style.opacity = 1;
     }
 }
 
