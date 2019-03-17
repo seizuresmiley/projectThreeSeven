@@ -57,16 +57,16 @@ class Anim{
         Anim.squareColor = "red";
         Anim.speed = 6;
         var rect2={
-            x:420,
+            x:600,
             y:0,
-            width:40,
+            width:60,
             height:10,
             directionX: 3
           };
           var rectRight={
-            x:600,
+            x:800,
             y:0,
-            width:40,
+            width:60,
             height:10,
             directionX: 3
           };
@@ -112,9 +112,9 @@ class Anim{
 
     addNote(){
         var rect2={
-            x:420,
+            x:600,
             y:0,
-            width:40,
+            width:60,
             height:10,
             directionX: 3
           };
@@ -123,9 +123,9 @@ class Anim{
 
     addRightNote(){
         var rect2={
-            x:600,
+            x:800,
             y:0,
-            width:40,
+            width:60,
             height:10,
             directionX: 3
           };
@@ -168,6 +168,7 @@ class Hud{
         document.getElementById("score").style.opacity = 1;
         document.getElementById("tip").style.opacity = 0;
         document.getElementById("judgeline").style.opacity = 1;
+        document.getElementById("judgeText").style.opacity = 1;
     }
 }
 
