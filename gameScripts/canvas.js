@@ -161,8 +161,8 @@ class Hud{
     setHud(){
         document.getElementById("jacketDisplay").src = this.song.jacketPath;
         document.getElementById("jacketDisplay").style.opacity = 1;
-        document.getElementById("artist").innerText = this.song.artist;
-        document.getElementById("title").innerText = this.song.name;
+        document.getElementById("artist").innerText = "ARTIST : " + this.song.artist;
+        document.getElementById("title").innerText = "TRACK : " + this.song.name;
         document.getElementById("hudLeft").style.opacity = 1;
         document.getElementById("combo").style.opacity = 1;
         document.getElementById("score").style.opacity = 1;
