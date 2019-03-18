@@ -58,10 +58,7 @@ class GameTimer {
                 console.log(frameId);
                 return;
             }
-<<<<<<< HEAD
             requestAnimationFrame(frameTimer);
-=======
->>>>>>> 1d1ad4a30624526692aade5424b43479e435e5fa
         }
         frameTimer();
 
