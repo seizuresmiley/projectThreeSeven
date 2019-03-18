@@ -4,32 +4,38 @@ class GameManifests{
             "jacketPath" : "imgs/flower.png",
             "name" : "FLOWER (STARDOM REMIX)",
             "artist" : "BEMANI Sound Team 'DJ TOTTO'",
-            "sound" : "https://raw.githubusercontent.com/seizuresmiley/threeseven_resources/experimental/audio/flower_remix.mp3"
+            "sound" : "audio/flower_remix.mp3"
         },
         "forgetting" : {
             "jacketPath" : "imgs/forgetting.png",
             "name" : "Forgetting Machine",
             "artist" : "Taku Inoue",
-            "sound" : "https://raw.githubusercontent.com/seizuresmiley/threeseven_resources/experimental/audio/forgetting.mp3"
+            "sound" : "audio/forgetting.mp3"
         },
 
         "hannari" : {
             "jacketPath" : "imgs/hannari.jpg",
             "name" : "HANNARI",
             "artist" : "BPM15Q",
-            "sound" : "https://raw.githubusercontent.com/seizuresmiley/threeseven_resources/experimental/audio/HANNARI.mp3"
+            "sound" : "audio/HANNARI.mp3"
         },
         "star_glitter" : {
             "jacketPath" : "imgs/star_glitter.jpg",
             "name" : "Star☆Glitter",
             "artist" : "777☆SISTERS ",
-            "sound" : "https://raw.githubusercontent.com/seizuresmiley/threeseven_resources/experimental/audio/star_glitter.mp3",
+            "sound" : "audio/star_glitter.mp3",
         },
         "seventh_haven" : {
             "jacketPath" : "imgs/seventh_haven.jpg",
             "name" : "SEVENTH HAVEN",
             "artist" : "7th Sisters",
-            "sound" : "https://raw.githubusercontent.com/seizuresmiley/threeseven_resources/experimental/audio/seventh_haven.mp3"
+            "sound" : "audio/seventh_haven.mp3"
+        },
+        "omoi" : {
+            "jacketPath" : "imgs/omoi.jpg",
+            "name" : "SEVENTH HAVEN",
+            "artist" : "7th Sisters",
+            "sound" : "audio.mp3"
         }
 
         };

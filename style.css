@@ -45,9 +45,7 @@ body {
     height: 100px;
     z-index: 2;
     opacity : 0;
-    position :absolute;
-    top: 10px;
-    left: 10px;
+    margin:auto;
 }
 
 #title{
@@ -57,7 +55,7 @@ body {
 }
 
 #artist{
-    position : relative;
+    position : absolute;
     top : 60px;
     left : 120px;
 }
@@ -184,3 +182,4 @@ body {
     transition : opacity 4s;
     color: white
 }
+
