@@ -223,3 +223,26 @@ body {
     font-size : 4em;
 
 }
+
+button {
+    background:none;
+    width : 100px;
+    height : 25px;
+    margin : auto;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+
+}
+
+.footer{
+    display:flex;
+    justify-content: center;
+}
+
+a:link{
+    color:white;
+}
+a:visited{
+    color:white;
+}
