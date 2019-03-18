@@ -14,6 +14,7 @@ class GameTimer {
     constructor(song) {
         GameTimer.frame = 0;
         GameTimer.firstNote = true;
+        GameTimer.song = song;
         let mf = new GameManifests;
         GameTimer.loadedChart = mf.chartManifest[song].chart.left;
         GameTimer.loadedRightChart = mf.chartManifest[song].chart.right;
@@ -57,6 +58,9 @@ class GameTimer {
                 ("timeout recv right");
                 TimingCheck.currentRightChart.shift();
                 Combo.resetCombo();
+            }
+            if (TimingCheck.currentChart.length == 0 && TimingCheck.currentRightChart.length == 0){
+                new EndScreen(GameTimer.song);
             }
             requestAnimationFrame(frameTimer);
         }
@@ -152,7 +156,34 @@ class TimingCheck {
             Combo.resetCombo();
             Anim.removeNote("right");
 
-        } else {
+        }
+    }
+}
+
+class EndScreen{
+    constructor(song){
+        console.log("endscreen")
+        this.score = Score.score;
+        this.combo = Combo.combo;
+        this.maxScore = (chart[song].chart.left.length + chart[song].chart.left.length) * 4;
+        this.percentage = (Score.score / this.maxScore ) / 100;
+        if (this.percentage >= 90){
+            this.grade = "S";
+        }
+        else if (this.percentage >= 80){
+            this.grade = "A";
+        }
+        else if (this.percentage >= 70){
+            this.grade = "B";
+        }
+        else if (this.percentage >= 60){
+            this.grade = "C"
+        }
+        else if (this.percentage >= 50){
+            this.grade = "D"
+        }
+        else if (this.percentage < 50){
+            this.grade = "F"
         }
     }
 }
