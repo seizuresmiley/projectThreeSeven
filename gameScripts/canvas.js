@@ -14,21 +14,21 @@ class MainCanvas{
             //context.fillRect(0,0,1280,720);
         //}
         if (action == "lanepress" && args == "left"){
-            context.fillStyle = "#ffffff"
+            context.fillStyle = "#ffffff";
             context.fillRect(420,680,100,20);
         }
         if (action == "lanepress" && args == "right"){
-            context.fillStyle = "#ffffff"
+            context.fillStyle = "#ffffff";
             context.fillRect(720,680,100,20);
         }
 
         if (action == "lanenopress" && args == "left"){
-            context.fillStyle = "#000000"
+            context.fillStyle = "#000000";
             context.fillRect(420,680,100,20);
         }
 
         if (action == "lanenopress" && args == "right"){
-            context.fillStyle = "#000000"
+            context.fillStyle = "#000000";
             context.fillRect(720,680,100,20);
         }
         if (action == "clear"){
@@ -91,7 +91,7 @@ class Anim{
           draw();
           requestAnimationFrame(animate);
           function draw(){
-            Anim.context.clearRect(0,0,Anim.canvas.width,Anim.canvas.height)
+            Anim.context.clearRect(0,0,Anim.canvas.width,Anim.canvas.height);
             for (var i=0;i<Anim.notes.length;i++){
                 var r=Anim.notes[i];
                 Anim.context.strokeStyle = "white";
@@ -135,28 +135,17 @@ class Anim{
     static removeNote(type){
         if (type == "left"){
             Anim.notes.shift();
-            ("left")
         }
         else{
             Anim.rightNotes.shift();
-            ("right")
         }
-    }
-}
-
-class NoteStates{
-    constructor(){}
-}
-
-class HtmlAnim{
-    constructor(){
     }
 }
 
 class Hud{
     constructor(song){
         let manifest = new GameManifests;
-        this.song = manifest.songManifest[song]
+        this.song = manifest.songManifest[song];
     }
     setHud(){
         document.getElementById("jacketDisplay").src = this.song.jacketPath;
@@ -202,26 +191,12 @@ class Score{
     }
 }
 
-class JudgeCounter{
-    constructor(){
-        JudgeCounter.pf = 0;
-        JudgeCounter.gd = 0;
-        JudgeCounter.ni = 0;
-        JudgeCounter.bd = 0;
-        JudgeCounter.mi = 0;
-    };
-
-    static countJudge(type){
-        JudgeCounter[type] += 1;
-    }
-}
-
 class EndScreen{
     constructor(song){
         var manifest = new GameManifests;
-        var rules = new GameRules
-        console.log("results")
-        console.log("song : " + song)
+        var rules = new GameRules;
+        console.log("results");
+        console.log("song : " + song);
         this.score = Score.score;
         this.combo = Combo.combo;
         this.maxCombo = manifest.chartManifest[song].chart.left.length + manifest.chartManifest[song].chart.right.length;
@@ -236,7 +211,7 @@ class EndScreen{
         document.getElementById("endScore").style.opacity = 1;
         document.getElementById("endCombo").style.opacity = 1;
         document.getElementById("blurb").style.opacity = 1;
-        var displayGrade = document.getElementById("endGrade")
+        var displayGrade = document.getElementById("endGrade");
         if (this.percentage >= 90){
             this.grade = "S";
         }
@@ -247,13 +222,13 @@ class EndScreen{
             this.grade = "B";
         }
         else if (this.percentage >= 60){
-            this.grade = "C"
+            this.grade = "C";
         }
         else if (this.percentage >= 50){
-            this.grade = "D"
+            this.grade = "D";
         }
         else if (this.percentage < 50){
-            this.grade = "F"
+            this.grade = "F";
         }
         displayGrade.innerText = this.grade;
         displayGrade.style.opactiy = 1;

@@ -21,34 +21,13 @@ class Audio{
         var source = this.context.createBufferSource();
         source.buffer = songBuffer;
         this.gainNode.connect(this.context.destination);
-        this.gainNode.gain.value = 0.1;
+        this.gainNode.gain.value = 0.5;
         source.connect(this.gainNode);
-        source.start()
+        source.start();
         let gameTimer = new GameTimer(song);
         gameTimer.startTime(song);
-        ;
+
         });
         
     }
-    stop(){
-        this.context.suspend();
-
-    }
-
-    static lowerVolume(){
-        this.gainNode.gain.value -= 0.1;
-    }
-    static raiseVolume(){
-        this.gainNode.gain.value += 0.1;
-    }
-}
-
-class idleAudioManager{
-    constructor(){
-        
-    }
-}
-
-function createbuffer(url){
-
 }

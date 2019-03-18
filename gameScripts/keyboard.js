@@ -19,13 +19,6 @@ class Keyboard {
                 Keyboard.right = false;
                 GameTimer.rightInput();
             }
-
-            if (event.key == "o"){
-                Audio.raiseVolume();
-            }
-            if (event.key == "l"){
-                Audio.lowerVolume();
-            }
         });
     }
 }
