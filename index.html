@@ -2,7 +2,7 @@
 <meta charset="UTF-8"> 
 
 <head>
-    <title>t7s tribute game poc</title>
+    <title>Tokyo 7th Sisters Tribute Game</title>
     <script src="gameScripts/gameRules.js"></script>
     <script src="gameScripts/gameManifests.js"></script>
     <link href="style.css" rel="stylesheet">
@@ -17,8 +17,8 @@
 </head>
 
 <body onload="onloadPrep()">
-    <h1>t7s tribute game poc</h1>
-    <div class="game">
+    <h1>Tokyo 7th Sisters Tribute Game</h1>
+    <div class="game" id = "game">
         <canvas class="center" id="canvas" width="1280" height="720"></canvas>
         <span id = "tip">Select A Song Below to Start Playing!</span>
         <div class="judgeLine" id="judgeline"></div>
@@ -31,13 +31,21 @@
             <span id="combo"></span>
             
         </div>
+        <div id="endScreen">
+            <span id = "endGrade" class = "endText"></span>
+            <span id = "endScore" class = "endText"></span>
+            <span id = "endCombo" class = "endText"></span>
+            <span id = "blurb" class = "endText"> Refresh the page to try again or select new song.</span>
+            <span id = "endGrade" class = "endText"></span>
+        </div>
     </div>
     <div class = help>Press "D" key for left lane and "J" key for the right lane. best played on Chrome or Firefox. Best played without lag. </div>
     <br>
     <h1>available songs</h1>
     <div id="selectableSongs">
-        <img src="imgs/forgetting.png" class="jacket" id="forgetting" onclick="set(this)" title="Forgetting Machine">
-        <img src="imgs/hannari.jpg" class="jacket" id="hannari" onclick="set(this)" title="HANNARI">
-        <img src="imgs/star_glitter.jpg" class="jacket" id="star_glitter" onclick="set(this)" title="Star*Glitter">
+        <a href="#game"><img src="imgs/forgetting.png" class="jacket" id="forgetting" onclick="set(this)" title="Forgetting Machine"></a>
+        <a href="#game"><img src="imgs/hannari.jpg" class="jacket" id="hannari" onclick="set(this)" title="HANNARI"></a>
+        <a href="#game"><img src="imgs/star_glitter.jpg" class="jacket" id="star_glitter" onclick="set(this)" title="Star*Glitter"></a>
+        <a href="#game"><img src="imgs/seventh_haven.jpg" class="jacket" id="seventh_haven" onclick="set(this)" title="SEVENTH HAVEN"></a>
     </div>
 </body>

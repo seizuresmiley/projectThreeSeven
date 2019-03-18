@@ -215,3 +215,45 @@ class JudgeCounter{
         JudgeCounter[type] += 1;
     }
 }
+
+class EndScreen{
+    constructor(song){
+        var manifest = new GameManifests;
+        var rules = new GameRules
+        console.log("results")
+        console.log("song : " + song)
+        this.score = Score.score;
+        this.combo = Combo.combo;
+        this.maxScore = (manifest.chartManifest[song].chart.left.length + manifest.chartManifest[song].chart.right.length) * rules.perfectScore;
+        this.percentage = ( Score.score / this.maxScore ) * 100;
+        console.log("max score : " + this.maxScore);
+        console.log("score : " + Score.score);
+        console.log("percentage : " + this.percentage);
+        document.getElementById("endScreen").style.opacity = 0.9;
+        document.getElementById("endScore").innerText = "Your Score : " + Score.score;
+        document.getElementById("endCombo").innerText = "Your Combo : " + Combo.combo;
+        document.getElementById("endScore").style.opacity = 1;
+        document.getElementById("endCombo").style.opacity = 1;
+        document.getElementById("blurb").style.opacity = 1;
+
+        if (this.percentage >= 90){
+            this.grade = "S";
+        }
+        else if (this.percentage >= 80){
+            this.grade = "A";
+        }
+        else if (this.percentage >= 70){
+            this.grade = "B";
+        }
+        else if (this.percentage >= 60){
+            this.grade = "C"
+        }
+        else if (this.percentage >= 50){
+            this.grade = "D"
+        }
+        else if (this.percentage < 50){
+            this.grade = "F"
+        }
+        console.log("grade : " + this.grade);
+    }
+}

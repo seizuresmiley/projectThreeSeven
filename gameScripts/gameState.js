@@ -27,8 +27,7 @@ class GameTimer {
         new TimingCheck(song, gameRule);
 
         (GameTimer.loadedChart);
-        requestAnimationFrame(frameTimer);
-
+        var frameId;
         function frameTimer() {
             GameTimer.frame += 1;
             if (GameTimer.loadedChart[0] < Math.abs((GameTimer.begin - 1794) - performance.now()) && GameTimer.firstNote) {
@@ -42,7 +41,7 @@ class GameTimer {
                 cv.addNote();
                 GameTimer.loadedChart.shift();
             }
-            if ((TimingCheck.currentChart[0] + 163) < Math.abs(GameTimer.begin - performance.now())) {
+            if ((TimingCheck.currentChart[0] + 168) < Math.abs(GameTimer.begin - performance.now())) {
                 Anim.removeNote("left");
                 ("timeout recv");
                 TimingCheck.currentChart.shift();
@@ -53,7 +52,7 @@ class GameTimer {
                 cv.addRightNote();
                 GameTimer.loadedRightChart.shift();
             }
-            if ((TimingCheck.currentRightChart[0] + 163) < Math.abs(GameTimer.begin - performance.now())) {
+            if ((TimingCheck.currentRightChart[0] + 168) < Math.abs(GameTimer.begin - performance.now())) {
                 Anim.removeNote("right");
                 ("timeout recv right");
                 TimingCheck.currentRightChart.shift();
@@ -61,9 +60,13 @@ class GameTimer {
             }
             if (TimingCheck.currentChart.length == 0 && TimingCheck.currentRightChart.length == 0){
                 new EndScreen(GameTimer.song);
+                cancelAnimationFrame(frameId);
+                console.log(frameId);
+                return;
             }
-            requestAnimationFrame(frameTimer);
+            frameId = requestAnimationFrame(frameTimer);
         }
+        frameTimer();
 
 
     }
@@ -160,30 +163,3 @@ class TimingCheck {
     }
 }
 
-class EndScreen{
-    constructor(song){
-        console.log("endscreen")
-        this.score = Score.score;
-        this.combo = Combo.combo;
-        this.maxScore = (chart[song].chart.left.length + chart[song].chart.left.length) * 4;
-        this.percentage = (Score.score / this.maxScore ) / 100;
-        if (this.percentage >= 90){
-            this.grade = "S";
-        }
-        else if (this.percentage >= 80){
-            this.grade = "A";
-        }
-        else if (this.percentage >= 70){
-            this.grade = "B";
-        }
-        else if (this.percentage >= 60){
-            this.grade = "C"
-        }
-        else if (this.percentage >= 50){
-            this.grade = "D"
-        }
-        else if (this.percentage < 50){
-            this.grade = "F"
-        }
-    }
-}
