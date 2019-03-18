@@ -18,6 +18,8 @@ class GameTimer {
         let mf = new GameManifests;
         GameTimer.loadedChart = mf.chartManifest[song].chart.left;
         GameTimer.loadedRightChart = mf.chartManifest[song].chart.right;
+        document.getElementById("selected").style.opacity = 0;
+        document.getElementById("selectedArtist").style.opacity = 0;
 
     }
     startTime(song) {

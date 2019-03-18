@@ -57,16 +57,16 @@ class Anim{
         Anim.squareColor = "red";
         Anim.speed = 6;
         var rect2={
-            x:600,
+            x:700,
             y:0,
-            width:60,
+            width:80,
             height:10,
             directionX: 3
           };
           var rectRight={
-            x:800,
+            x:900,
             y:0,
-            width:60,
+            width:80,
             height:10,
             directionX: 3
           };
@@ -112,9 +112,9 @@ class Anim{
 
     addNote(){
         var rect2={
-            x:600,
+            x:700,
             y:0,
-            width:60,
+            width:80,
             height:10,
             directionX: 3
           };
@@ -123,9 +123,9 @@ class Anim{
 
     addRightNote(){
         var rect2={
-            x:800,
+            x:900,
             y:0,
-            width:60,
+            width:80,
             height:10,
             directionX: 3
           };
@@ -224,6 +224,7 @@ class EndScreen{
         console.log("song : " + song)
         this.score = Score.score;
         this.combo = Combo.combo;
+        this.maxCombo = manifest.chartManifest[song].chart.left.length + manifest.chartManifest[song].chart.right.length;
         this.maxScore = (manifest.chartManifest[song].chart.left.length + manifest.chartManifest[song].chart.right.length) * rules.perfectScore;
         this.percentage = ( Score.score / this.maxScore ) * 100;
         console.log("max score : " + this.maxScore);
@@ -235,7 +236,7 @@ class EndScreen{
         document.getElementById("endScore").style.opacity = 1;
         document.getElementById("endCombo").style.opacity = 1;
         document.getElementById("blurb").style.opacity = 1;
-
+        var displayGrade = document.getElementById("endGrade")
         if (this.percentage >= 90){
             this.grade = "S";
         }
@@ -254,6 +255,11 @@ class EndScreen{
         else if (this.percentage < 50){
             this.grade = "F"
         }
-        console.log("grade : " + this.grade);
+        displayGrade.innerText = this.grade;
+        displayGrade.style.opactiy = 1;
+
+        if (this.maxCombo == Combo.combo){
+            document.getElementById("fullCombo").innerText = "Full Combo!"
+        }
     }
 }

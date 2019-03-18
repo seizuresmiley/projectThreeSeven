@@ -183,3 +183,40 @@ body {
     color: white
 }
 
+#selected{
+    position : absolute;
+    top :   625px;
+    left : 25px;
+    color:white;
+    font-size : 1.5em;
+    font-family : Arial;
+}
+#selectedArtist{
+    position : absolute;
+    top :   660px;
+    left : 25px;
+    color:white;
+    font-size : 1.5em;
+    font-family : Arial;
+}
+
+#endGrade{
+    top : 200px;
+    left : 800px;
+    color:white;
+    text-align : center;
+    opacity : 1;
+    transition : opacity 4s;
+    font-size : 20em;
+    
+}
+
+#fullCombo {
+    top : 500px;
+    left : 320px;
+    color:yellow;
+    text-align : center;
+    opacity : 0;
+    transition : opacity 4s;
+
+}

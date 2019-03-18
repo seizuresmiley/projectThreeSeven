@@ -16,5 +16,11 @@ function set(state){
 
 }
  
+function setInfo(hover){
+    var jacket = document.getElementById("selected");
+    var manifest = new GameManifests;
+    jacket.innerText = "Track : " + hover.title;
+    document.getElementById("selectedArtist").innerText = "Artist : " + manifest.songManifest[hover.id].artist;
 
+}
 
