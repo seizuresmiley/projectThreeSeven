@@ -25,7 +25,6 @@ class Audio{
         source.connect(this.gainNode);
         source.start()
         let gameTimer = new GameTimer(song);
-        (song);
         gameTimer.startTime(song);
         ;
         });
