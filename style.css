@@ -212,11 +212,14 @@ body {
 }
 
 #fullCombo {
+    font-family: Arial;
+    position: absolute;
     top : 500px;
     left : 320px;
     color:yellow;
     text-align : center;
     opacity : 0;
     transition : opacity 4s;
+    font-size : 4em;
 
 }

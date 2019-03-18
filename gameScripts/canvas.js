@@ -259,7 +259,8 @@ class EndScreen{
         displayGrade.style.opactiy = 1;
 
         if (this.maxCombo == Combo.combo){
-            document.getElementById("fullCombo").innerText = "Full Combo!"
+            document.getElementById("fullCombo").innerText = "Full Combo!";
+            document.getElementById("fullCombo").style.opacity = 1;
         }
     }
 }
